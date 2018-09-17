@@ -19,8 +19,11 @@ or
 
 > make tests
 
-# This spits out 2 executables
+## This spits out 3 executables
 app - the application
+
+app-debug - the application with debug symbols
+
 tests - the appliaction unit tests
 
 # To get coverage metric on osx or linux from the build folder
