@@ -1,8 +1,8 @@
-#C++ sonarqube cmake catch gcov valgrind example
+# C++ sonarqube cmake catch gcov valgrind example
 Simple example of using the catch library and gcov for unit test and coverage stats.
 You can use any testing framework, e.g. gtest in the same way.
 
-#how to build it
+# how to build it
 > mkdir build
 
 > cd build
@@ -19,22 +19,22 @@ or
 
 > make tests
 
-#This spits out 2 executables
+# This spits out 2 executables
 app - the application
 tests - the appliaction unit tests
 
-#To get coverage metric on osx or linux from the build folder
+# To get coverage metric on osx or linux from the build folder
 
 catch/build> ./tests
 
 catch/build> gcov ../src/*.cpp --object-directory CMakeFiles/tests.dir/
 
-#To get nicer html format
+# To get nicer html format
 
 catch/build>gcovr -r ../src --object-directory ./CMakeFiles/tests.dir/ --html --html-details -o output.html
 
 
-#Sonarqube (output all the test info to files)
+# Sonarqube (output all the test info to files)
 
 catch> cd /build
 
