@@ -17,6 +17,12 @@ file( GLOB TESTFILES ../tests/*.cpp )
 #spit out the program - app target
 add_executable(app main.cpp ${APP_FILES})
 
+#debug target
+add_executable(app-debug main.cpp ${APP_FILES})
+
+#add symbols for profiling
+target_compile_options(app-debug PRIVATE -g)
+
 #add in the catch lib for testing to catch, it's header only so nice and easy.
 add_library(catch INTERFACE)
 target_include_directories(catch INTERFACE "../thirdparty/catch/catch.h")

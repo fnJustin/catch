@@ -21,12 +21,27 @@ This spits out 2 executables
 app - the application
 tests - the appliaction unit tests
 
-To get coverage metricc on osx or linux from the build folder
+To get coverage metric on osx or linux from the build folder
 
-> ./tests
+catch/build> ./tests
 
-> gcov ../src/*.cpp --object-directory CMakeFiles/tests.dir/
+catch/build> gcov ../src/*.cpp --object-directory CMakeFiles/tests.dir/
 
 To get nicer html format
 
->gcovr -r ../src --object-directory ./CMakeFiles/tests.dir/ --html --html-details -o output.html
+catch/build>gcovr -r ../src --object-directory ./CMakeFiles/tests.dir/ --html --html-details -o output.html
+
+
+Sonarqube (output all the test info to files)
+
+catch> cd /build
+catch/build> ./tests
+catch/build> gcov ../src/*.cpp --object-directory CMakeFiles/tests.dir/
+catch/build> cd ..
+catch> gcovr -r . -x --object-directory=build >coverage.xml
+catch> valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes --xml=yes --xml-file=valgrind.xml build/app-debug
+catch> cppcheck --xml --xml-version=2 --enable=all 2>cppcheck.xml ./src
+catch> sonar-scanner
+
+
+
