@@ -35,12 +35,19 @@ catch/build>gcovr -r ../src --object-directory ./CMakeFiles/tests.dir/ --html --
 Sonarqube (output all the test info to files)
 
 catch> cd /build
+
 catch/build> ./tests
+
 catch/build> gcov ../src/*.cpp --object-directory CMakeFiles/tests.dir/
+
 catch/build> cd ..
+
 catch> gcovr -r . -x --object-directory=build >coverage.xml
+
 catch> valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes --xml=yes --xml-file=valgrind.xml build/app-debug
+
 catch> cppcheck --xml --xml-version=2 --enable=all 2>cppcheck.xml ./src
+
 catch> sonar-scanner
 
 
