@@ -58,11 +58,11 @@ SCENARIO( "vec3 supports operator overloads", "[vec3]" ) {
 }
 
 TEST_CASE( "aproximatlyEqual works", "[vec3]" ) {
-    REQUIRE( math::aproximatlyEqual(1,1) == true );
-    REQUIRE( math::aproximatlyEqual(0.999,1) == true );
-    REQUIRE( math::aproximatlyEqual(0.0,-0.0001) == true );
-    REQUIRE( math::aproximatlyEqual(0.0, 0.01) == false );
-    REQUIRE( math::aproximatlyEqual(1000.0, 1000.01) == false );
+    REQUIRE( math::approximatelyEqual(1,1) == true );
+    REQUIRE( math::approximatelyEqual(0.999,1) == true );
+    REQUIRE( math::approximatelyEqual(0.0,-0.0001) == true );
+    REQUIRE( math::approximatelyEqual(0.0, 0.01) == false );
+    REQUIRE( math::approximatelyEqual(1000.0, 1000.01) == false );
 }
 
 TEST_CASE( "Vector lenSq is correct", "[vec3]" ) {
@@ -74,7 +74,7 @@ TEST_CASE( "Vector lenSq is correct", "[vec3]" ) {
 }
 
 TEST_CASE( "Vector length is correct", "[vec3]" ) {
-    REQUIRE( math::aproximatlyEqual(math::vec3(0.707,0.707,0).len(), 1) );
+    REQUIRE( math::approximatelyEqual(math::vec3(0.707,0.707,0).len(), 1) );
     REQUIRE( math::vec3(2,3,6).len() == 7 );
     
 }

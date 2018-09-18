@@ -5,7 +5,7 @@
 #include <math.h>
 namespace math
 {
-    static bool aproximatlyEqual(float a, float b){
+    static bool approximatelyEqual(float a, float b){
         if(fabs(a - b) <= 0.001)
         {
             return true;
