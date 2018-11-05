@@ -7,6 +7,7 @@ int * leak()
 
 int main()
 {
+    a=1;
     math::vec3 v(1,2,3);
     
     int * l = leak();
